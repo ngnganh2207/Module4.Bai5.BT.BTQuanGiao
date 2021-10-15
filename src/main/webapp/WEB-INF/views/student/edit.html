@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h3 style="text-align: center">Edit</h3>
+    <form  th:object="${studentEdit}" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td><input th:hidden="*{id}"></td>
+                <td>Name</td>
+                <td><input placeholder="Nhập name" th:field="*{name}"></td>
+                <td>Address</td>
+                <td><input placeholder="Nhập address" th:field="*{address}"></td>
+                <td>Email</td>
+                <td><input placeholder="Nhập email" th:field="*{email}"></td>
+                <td>Image:</td>
+                <td>
+                    <input type="file" th:field="*{image}">
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-success">EDIT</button>
+    </form>
+
+</div>
+
+</body>
+</html>

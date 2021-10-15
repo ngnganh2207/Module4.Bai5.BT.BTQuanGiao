@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h3 style="text-align: center">THÊM HỌC VIÊN</h3>
+    <form th:action="@{/create/student}" th:object="${student}" method="post" enctype="multipart/form-data">
+        <table class="table">
+            <tbody>
+            <tr>
+                <td>Name</td>
+                <td><input placeholder="Nhập tên" id="name" type="text" name="name"></td>
+                <td>Address</td>
+                <td><input placeholder="Nhập address" id="address"type="text" name="address"></td>
+                <td>Email</td>
+                <td><input placeholder="Nhập address" id="email"type="text" name="email"></td>
+                <td>image:</td>
+                <td>
+                    <input id="image" type="file" name="image">
+                </td>
+<!--                <td>Music:</td>-->
+<!--                <td>-->
+<!--                    <input type="file" name="fileMusic">-->
+<!--                </td>-->
+<!--                <td>Cam nghi</td>-->
+<!--                <td><input placeholder="cam nghi" name="binhLuan"></td>-->
+<!--                <td>Trang Thai</td>-->
+<!--                <td colspan="2">-->
+<!--                    <select th:field="*{status}">-->
+<!--                        <option th:each="lp: ${listTrangThai}" th:value="${lp.nameTrangThai}" th:text="${lp.nameTrangThai}">-->
+<!--                        </option>-->
+<!--                    </select>-->
+<!--                </td>-->
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+</div>
+
+</body>
+</html>
